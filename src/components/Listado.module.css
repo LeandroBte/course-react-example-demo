@@ -1,0 +1,88 @@
+.listaTemas {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.titulo {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  counter-reset: item;
+}
+
+.tema {
+  background: #f8f9fa;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  counter-increment: item;
+}
+
+.tema:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tema::before {
+  content: counter(item) ".";
+  font-weight: bold;
+  color: #3498db;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+
+.botonAgregar {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.8rem 1.5rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.botonAgregar:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+.botonAgregar:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.temaVisto {
+  color: #2ecc71;
+  margin-left: auto;
+  font-weight: 500;
+  background: #e8f8f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.temaNoVisto {
+  color: #e74c3c;
+  margin-left: auto;
+  font-weight: 500;
+  background: #fde8e6;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
