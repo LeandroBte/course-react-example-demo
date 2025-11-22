@@ -1,6 +1,6 @@
 import styles from './Listado.module.css';
 import { useState } from 'react';
-
+import { AddTask } from './AddTask';
 
 const Temas = ({ nombre, visto }) => {
     return (
@@ -15,10 +15,6 @@ const Temas = ({ nombre, visto }) => {
 
 
 const Listado = () => { 
-    
-    const addTask = () => {
-        setTemas([...temas,{ nombre: "Redux", visto: false }]);
-    };
 
     let listaItems = [
         { nombre: "Introducción a React", visto: true },
@@ -39,14 +35,12 @@ const Listado = () => {
     return (
         <div className={styles.listaTemas}>
             <h2 className={styles.titulo}>Lista de Temas que cubren React Js</h2>
+            <AddTask addTask={setTemas}/>
             <ol className={styles.lista}>
                 {temas.map((tema, index) => (
                     <Temas key={index} nombre={tema.nombre} visto={tema.visto} />
                 ))}
             </ol>
-            <button onClick={addTask} className={styles.botonAgregar}>
-                Agregar Tema
-            </button>
         </div>
     );
 }
