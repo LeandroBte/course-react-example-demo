@@ -11,9 +11,7 @@ export const AddTask = ({ addTask }) => {
     const onSubmitTask = (e) => {
         e.preventDefault();
         if (task.trim() === '') return;
-        
-        const newTask = { nombre: task, visto: false };
-        addTask(temas => [...temas, newTask]);
+        addTask(task);
         setTask('');
     }
 
